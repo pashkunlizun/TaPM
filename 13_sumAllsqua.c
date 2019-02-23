@@ -10,5 +10,5 @@ int main()
     	scanf("%d", &n);
     	sum += n*n;
 	}
-    printf("sum: %d",sum);
+    printf("%d",sum);
 }
