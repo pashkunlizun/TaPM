@@ -3,9 +3,8 @@
 int main()
 {
     int N ,n;
-    int i=0;
+    int i = 0, sum = 0;
     scanf("%d", &N);
-    int sum = 0;
     for (i = 0; i < N; i++)
     {
     	scanf("%d", &n);
