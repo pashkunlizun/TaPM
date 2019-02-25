@@ -40,6 +40,6 @@ ___
 | n|3 2 1 -1 -8||
 | sum||7|
 ___
-#### Ссылки:####  
+#### Ссылки: ####  
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 - [markdown-doc](https://github.com/OlgaVlasova/markdown-doc/blob/master/README.md#Parag)
