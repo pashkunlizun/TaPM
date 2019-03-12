@@ -25,6 +25,7 @@ ___
 | 1              |                 |
   
   **Скриншот 1.**
+  
 [![example](https://pp.userapi.com/c849132/v849132119/14d1ac/833gEBtSG70.jpg)](пример1) 
 
   
@@ -46,6 +47,7 @@ ___
 
   
   **Скриншот 2.**
+  
 [![example](https://pp.userapi.com/c849132/v849132119/14d1a5/JDKkcnVwpOs.jpg)](пример2)
 ___
 #### Ссылки: ####  
