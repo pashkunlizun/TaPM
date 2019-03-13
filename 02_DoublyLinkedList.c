@@ -26,19 +26,14 @@ void init(struct  list* l,int value)
 
 int clear(struct list* l)
 {
-	if(isEmpty(l)==1)
-	{
-		struct Node *tmp=l->head;
-		struct Node *temp=NULL;
-		while(tmp!=NULL)
-		{
-			temp=tmp->next;
-			free(tmp);
-			tmp=temp;
-		}
-		l->head=NULL;
-		l->tail=NULL;
-	}
+    while(l->head!=NULL)
+    {
+    	struct Node *tmp=l->head;
+        l->head=l->head->next;
+        free(tmp);
+    }
+	l->head = NULL;
+	l->tail = NULL;
 }
 
 int isEmpty(struct list* l)
@@ -107,7 +102,8 @@ int push_front(struct list* l,int x)
 int insertAfter	(struct list* l,int num, int data)
 {
 	struct Node* tmp = l->head;
-	for (int i = 1;i<num;i++)
+	int i;
+	for (i = 1;i<num;i++)
 	{
 		tmp=tmp->next;
 		if(tmp==NULL) 
@@ -125,7 +121,8 @@ int insertAfter	(struct list* l,int num, int data)
 int insertBefore(struct list* l,int num, int data)
 {
 	struct Node* tmp = l->head;
-	for (int i = 1;i<num;i++)
+	int i;
+	for (i = 1;i<num;i++)
 	{
 		tmp=tmp->next;
 		if(tmp==NULL) 
@@ -142,47 +139,62 @@ int insertBefore(struct list* l,int num, int data)
 
 int removeFirst(struct list* l, int x)
 {
-	struct Node* element = find(l,x);
-	if (element!=NULL){
-		_remove(l,element);
+	struct Node *findNode = find(l, x);
+	if (findNode != NULL)
+	{
+		if (findNode==l->head && findNode==l->tail) {
+			clear(l);
+			return 0;
+		}
+		if (findNode==l->head)
+		{
+			l->head=findNode->next;
+			findNode->next->prev=NULL;
+		}
+		else if(findNode==l->tail)
+		{
+			l->tail=findNode->prev;
+			findNode->prev->next=NULL;
+		}
+		else if (findNode!=l->head && findNode!=l->tail)
+		{
+			findNode->next->prev=findNode->prev;
+			findNode->prev->next=findNode->next;
+		}
+		free(findNode);
 		return 0;
 	}
-	return 1;
+	return -1;
 }
 
 int removeLast(struct list* l,int x)
 {
-	struct Node* element = find_invers(l,x);
-	if (element!=NULL){
-		_remove(l,element);
+	struct Node *findNode = find_invers(l, x);
+	if (findNode != NULL)
+	{
+		if (findNode==l->head && findNode==l->tail) {
+			clear(l);
+			return 0;
+		}
+		if (findNode==l->head)
+		{
+			l->head=findNode->next;
+			findNode->next->prev=NULL;
+		}
+		else if(findNode==l->tail)
+		{
+			l->tail=findNode->prev;
+			findNode->prev->next=NULL;
+		}
+		else if (findNode!=l->head && findNode!=l->tail)
+		{
+			findNode->next->prev=findNode->prev;
+			findNode->prev->next=findNode->next;
+		}
+		free(findNode);
 		return 0;
 	}
-	return 1;
-}
-
-void _remove(struct list* l, struct Node *tmp){
-	if(tmp!=NULL){
-		if (tmp==l->head && tmp==l->tail) {
-			clear(l);
-			return;
-		}
-		if (tmp==l->head)
-		{
-			l->head=tmp->next;
-			tmp->next->prev=NULL;
-		}
-		else if(tmp==l->tail)
-		{
-			l->tail=tmp->prev;
-			tmp->prev->next=NULL;
-		}
-		else if (tmp!=l->head && tmp!=l->tail)
-		{
-			tmp->next->prev=tmp->prev;
-			tmp->prev->next=tmp->next;
-		}
-		free(tmp);
-	}
+	return -1;
 }
 
 void print(struct list* l)
@@ -221,10 +233,9 @@ int main()
 	}
 	print(l);
 	
-	int k[3];
-	for(int i=0;i<3;i++){
-		scanf("%d",&k[i]);
-		if(find(l,k[i])!=NULL)
+	for(i=0;i<3;i++){
+		scanf("%d",&n);
+		if(find(l,n)!=NULL)
 			printf("1");
 		else
 			printf("0");

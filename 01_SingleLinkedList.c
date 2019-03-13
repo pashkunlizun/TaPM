@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 
 struct Node {
@@ -21,18 +21,13 @@ void init(struct list* l,int value)
 
 int clear(struct list* l)
 {
-    if(isEmpty(l)==1)
+    while(l->head!=NULL)
     {
-        struct Node *tmp=l->head;
-        struct Node *temp=NULL;
-        while(tmp!=NULL)
-        {
-            temp=tmp->next;
-            free(tmp);
-            tmp=temp;
-        }
-        l->head=NULL;
+    	struct Node *tmp=l->head;
+        l->head=l->head->next;
+        free(tmp);
     }
+    l->head=NULL;
 }
 
 int isEmpty(struct list* l)
@@ -106,48 +101,41 @@ int insertAfter (struct list* l,int num, int value)
 }
 
 
-int removeFirst(struct list* l, int x)
-{
-    struct Node* element = find(l,x);
-    if (element!=NULL){
-        _remove(l,element);
-        return 0;
-    }
-    return -1;
-}
-
-void _remove(struct list* l, struct Node *tmp){
-    if(tmp!=NULL){
-        if (tmp==l->head)
-            l->head=tmp->next;
-        else
-        {
-            struct Node *temp = (struct Node*)malloc(sizeof(struct Node));
-            temp=l->head;
-            while(temp->next!=tmp)
-                temp=temp->next;
-            temp->next = tmp->next;
-        }
-        free(tmp);
-    }
+int removeFirst(struct list* l, int value) {
+	struct Node *findNode = find(l, value);
+	struct Node *currentNode = l->head;
+	if (findNode == NULL)
+		return -1;
+	if (currentNode == findNode) {
+		l->head = findNode->next;
+	}
+	else {
+		struct Node *tmp = (struct Node*)malloc(sizeof(struct Node));
+		tmp = l->head;
+		while (tmp->next != findNode)
+			tmp = tmp->next;
+		tmp->next = findNode->next;
+	}
+	free(findNode);
+	return 0;
 }
 
 void print(struct list* l)
 {
     struct Node* tmp=l->head;
-    while(tmp->next!=NULL)
+    while(tmp!=NULL)
     {
         printf("%d ", tmp->value);
         tmp=tmp->next;
     }
-    printf("%d\n", tmp->value);
+    printf("\n");
 }
-
 
 int main()
 {
     int N,n,i;
-    struct list* l=(struct list*)malloc(sizeof(struct list));    
+    struct list* l=(struct list*)malloc(sizeof(struct list));  
+ 
     scanf("%d",&N);
     for (i=0;i<N;i++)
     {
@@ -156,10 +144,9 @@ int main()
     }
     print(l);
     
-    int k[3];
     for(i=0;i<3;i++){
-        scanf("%d",&k[i]);
-        if(find(l,k[i])!=NULL)
+        scanf("%d",&n);
+        if(find(l,n)!=NULL)
             printf("1");
         else
             printf("0");
