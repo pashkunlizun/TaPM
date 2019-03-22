@@ -50,9 +50,11 @@ ___
 |                |       4         |
 |                |                 |
   
-  **Скриншот 1.**
+  **Скриншоты.**
   
-[![example]()](пример1) 
+[![example](https://pp.userapi.com/c849420/v849420693/156da8/jG3rJdM7v7U.jpg)](пример1) 
+[![example](https://pp.userapi.com/c849420/v849420693/156db6/sulrsVdFyVU.jpg)](пример2) 
+[![example](https://pp.userapi.com/c849420/v849420693/156daf/sCIp7_daKH4.jpg)](пример3) 
 ___
 #### Ссылки: ####  
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
