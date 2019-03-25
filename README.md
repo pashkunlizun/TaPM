@@ -51,7 +51,7 @@ ___
   
   **Скриншот 3.**
   
-[![example]()](пример3) 
+[![example](https://pp.userapi.com/c847124/v847124362/1cea4b/Zk0EGXHKxYY.jpg)](пример3) 
 ___
 #### Ссылки: ####  
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
