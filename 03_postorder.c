@@ -10,7 +10,6 @@ struct tree* root;
 
 void init_tree() { root = NULL; }
 int is_empty_tree() { return root == NULL; }
-struct tree* get_root() { return root; }
 
 struct tree* create_tree(int val)
 {
