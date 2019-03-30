@@ -43,17 +43,17 @@ void insert_BST(int key)
 		free(n);
 }
 
-void printSubtree(struct tree* root, int level) 
+void printSubtree(struct tree* subtree, int level) 
 { 
     if (root == NULL) 
         return; 
     if (level > 0) 
     { 
-        printSubtree(root->left, level-1); 
-        printSubtree(root->right, level-1); 
+        printSubtree(subtree->left, level-1); 
+        printSubtree(subtree->right, level-1); 
     } 
     else
-        printf("%d ", root->data);
+        printf("%d ", subtree->data);
 } 
 
 void print() 
