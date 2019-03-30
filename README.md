@@ -23,7 +23,7 @@ ___
   
   **Скриншот 1.**
   
-[![example](https://pp.userapi.com/c845323/v845323185/1d54fa/eFCdJXKBgT0.jpg)](пример1)  
+[![example](https://pp.userapi.com/c849132/v849132343/15b4a1/fp4CWA5cF5o.jpg)](пример1)  
     
    **Задание 2.** Было сделано так:  
   Считываются 7 элементов, введенных пользователем и заносятся в дерево, выводятся все значения дерева в порядке их посещения.
@@ -37,7 +37,7 @@ ___
   
   **Скриншот 2.**
   
-[![example](https://pp.userapi.com/c852036/v852036872/f12b1/WqUVSFd4MbM.jpg)](пример2)  
+[![example](https://pp.userapi.com/c849132/v849132343/15b4af/Ykjrkg7sQkI.jpg)](пример2)  
   
    **Задание 3.** Было сделано так:  
   Считываются 7 элементов, введенных пользователем и заносятся в дерево, выводятся все значения дерева в порядке их посещения.
@@ -51,7 +51,7 @@ ___
   
   **Скриншот 3.**
   
-[![example](https://pp.userapi.com/c847124/v847124362/1cea4b/Zk0EGXHKxYY.jpg)](пример3) 
+[![example](https://pp.userapi.com/c849132/v849132343/15b4c0/4ZDkb4e69JU.jpg)](пример3) 
 ___
 #### Ссылки: ####  
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
