@@ -43,6 +43,19 @@ void insert_BST(int key)
 		free(n);
 }
 
+int maxHeight(struct tree* t) 
+{ 
+    if (t==NULL) 
+        return 0; 
+    else{ 
+        int l = maxHeight(t->left); 
+        int r = maxHeight(t->right); 
+        if (l > r) 
+            return l+1; 
+        else return r+1; 
+    } 
+} 
+
 void printSubtree(struct tree* subtree, int level) 
 { 
     if (root == NULL) 
@@ -62,19 +75,6 @@ void print()
     int depth; 
     for (depth=0; depth<max; depth++) 
         printSubtree(root, depth); 
-} 
-
-int maxHeight(struct tree* t) 
-{ 
-    if (t==NULL) 
-        return 0; 
-    else{ 
-        int l = maxHeight(t->left); 
-        int r = maxHeight(t->right); 
-        if (l > r) 
-            return l+1; 
-        else return r+1; 
-    } 
 } 
   
 void main()
