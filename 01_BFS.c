@@ -87,5 +87,5 @@ void main()
 		scanf("%d", &input_data);
 		insert_BST(input_data);
 	}
-	printf("\n"); print();
+	printf("\n"); print(); printf("\n");
 }
