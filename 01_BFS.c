@@ -58,7 +58,7 @@ int maxHeight(struct tree* t)
 
 void printSubtree(struct tree* subtree, int level) 
 { 
-    if (root == NULL) 
+    if (subtree == NULL) 
         return; 
     if (level > 0) 
     { 
