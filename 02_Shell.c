@@ -3,7 +3,7 @@
 
 void shell(int *arr, int arr_length)
 {
-	int i, j, k, t, count =0 , compare =0;
+	int i, j, k, t;
 	for(k = arr_length / 2; k > 0; k /= 2){
         for(i = k; i < arr_length; i++)
         {
