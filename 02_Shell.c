@@ -11,19 +11,15 @@ void shell(int *arr, int arr_length)
             for(j = i; j >= k; j -= k)
             {
                 if(t < arr[j - k]){
-					compare++;
-					count++;
                     arr[j] = arr[j - k];
                 }
                 else{
-                	compare++;
                     break;
                 }
             }
             arr[j] = t;
         }
     }
-    printf("number of permutations(perestanovki) = %d \nnumber of comparisons(sravnenie) = %d \n\n",count, compare);
 }
 
 int print(int *arr, int arr_len)	{
