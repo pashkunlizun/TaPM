@@ -5,7 +5,8 @@
 void shell(int arr[], int arr_length, int* countComparisons, int* countSwaps)
 {
     int i, j, k, t;
-    for(k = arr_length / 2; k > 0; k /= 2){
+    for(k = arr_length / 2; k > 0; k /= 2)
+    {
         for(i = k; i < arr_length; i++)
         {
             t = arr[i];
@@ -19,10 +20,10 @@ void shell(int arr[], int arr_length, int* countComparisons, int* countSwaps)
                 else{
                     break;
             	}
+            }
             arr[j] = t;
-        	}
-    	}
-	}
+        }
+    }
 }
 
 int main()    {
