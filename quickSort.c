@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void qs(int *arr, int left, int right, int* countComparisons, int* countSwaps)
+void qs(int arr[], int left, int right, int* countComparisons, int* countSwaps)
 {
     int i, j, x, y;
     
@@ -10,11 +10,10 @@ void qs(int *arr, int left, int right, int* countComparisons, int* countSwaps)
     x = arr[(left+right)/2]; 
     
     do  {
-        while ((arr[i] < x) && (i < right)) i++;
-        while ((x < arr [j]) && (j > left)) j--;
-        (*countComparisons)++;
+        while ((*countComparisons)++, (arr[i] < x) && (i < right)) i++;
+        while ((*countComparisons)++, (x < arr [j]) && (j > left)) j--;
         if (i <= j) {
-        	(*countSwaps)++;
+            (*countSwaps)++;
             y = arr[i];
             arr[i] = arr[j];
             arr[j] = y;
