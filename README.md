@@ -25,7 +25,7 @@ ___
   
 [![example](https://pp.userapi.com/c845521/v845521924/1f1225/3ry23ZwvtqU.jpg)](примерВыполненияПрограммы)  
     
-[![example](https://pp.userapi.com/c846324/v846324924/1de972/rNgjYJWTPrE.jpg)](примерГрафика)  
+[![example](https://pp.userapi.com/c846324/v846324924/1de972/rNgjYJWTPrE.jpg)](примерГрафик)  
   
 ___
 #### Ссылки: ####  
