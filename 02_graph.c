@@ -7,10 +7,8 @@ void mincost(int city, int arr[MAX][MAX],int arr_length, int *visited, int *cost
 {
 	int i,ncity;
 	visited[city]=1;
-
 	printf("%d--->",city);
-	ncity=least(city, arr,arr_length,visited,cost,prov);
-
+	ncity=greedy(city, arr,arr_length,visited,cost,prov);
 	if(ncity==999)
 	{
 		ncity=begin;
@@ -18,31 +16,26 @@ void mincost(int city, int arr[MAX][MAX],int arr_length, int *visited, int *cost
 		*cost+=arr[city][ncity];
 		return;
 	}
- 
 	mincost(ncity,arr,arr_length,visited,cost,begin,prov);
 }
- 
-int least(int c, int arr[MAX][MAX], int arr_length, int *visited,int *cost,int *prov)
+int greedy(int c, int arr[MAX][MAX], int arr_length, int *visited,int *cost,int *prov)
 {
 	int i,nc=999;
 	int min=999,kmin;
  	*prov+=1;
 	for(i=0;i < arr_length;i++)
 	{
-		*prov++;
-		if((arr[c][i]!=0)&&(visited[i]==0)){
-			if(arr[c][i]+arr[i][c] < min)
-			{
-				min=arr[i][0]+arr[c][i];
-				kmin=arr[c][i];
-				nc=i;
-			}
-		}
+        if((arr[i][c]!=0)&&(visited[i]==0)){
+            if(arr[i][c] < min)
+            {
+                min=arr[i][c];
+                kmin=arr[i][c];
+                nc=i;
+            }
+        }
 	}
- 
 	if(min!=999)
 		*cost+=kmin;
-		*prov++;
  
 	return nc;
 }
@@ -68,7 +61,7 @@ int main()
 	// создаем файл для размера двумерного массива
 	FILE *createLength;
 	createLength = fopen("length.txt","wt");
-	definitionLength = 5+rand()%7;
+	definitionLength = 4+rand()%7;
 	fprintf(createLength,"%d ",definitionLength);
 	fclose(createLength);
 	
@@ -149,7 +142,7 @@ int main()
 			weight[i]=999;
 			continue;
 		}
-		printf("\nMinimum cost from %d is %d\n ",i,cost);
+		printf("\nMinimum cost from %d is %d ",i,cost);
 		weight[i]=cost;
 	}
 	min = weight[0];
