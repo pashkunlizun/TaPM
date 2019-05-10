@@ -3,20 +3,22 @@
 #include <limits.h>
 #define MAX 11
 
-void mincost(int city, int arr[MAX][MAX],int arr_length, int *visited, int *cost,int begin, int *prov)
+void mincost(int city, int arr[MAX][MAX],int arr_length, int *visited, int *cost,int begin, int *prov, FILE* saveResult)
 {
 	int i,ncity;
 	visited[city]=1;
-	printf("%d--->",city);
+	printf("%d<--",city);
+	fprintf(saveResult,"%d<--",city);
 	ncity=greedy(city, arr,arr_length,visited,cost,prov);
 	if(ncity==999)
 	{
 		ncity=begin;
 		printf("%d",ncity);
+		fprintf(saveResult,"%d",ncity);
 		*cost+=arr[city][ncity];
 		return;
 	}
-	mincost(ncity,arr,arr_length,visited,cost,begin,prov);
+	mincost(ncity,arr,arr_length,visited,cost,begin,prov,saveResult);
 }
 int greedy(int c, int arr[MAX][MAX], int arr_length, int *visited,int *cost,int *prov)
 {
@@ -136,13 +138,16 @@ int main()
 		cost=0;
 		free_v(visited,arr_length);
 		printf("\n\nThe Path is:\n");
-		mincost(i,arr,arr_length, visited, &cost,i,&prov);
+		fprintf(saveResult,"\n\nThe Path is:\n");
+		mincost(i,arr,arr_length, visited, &cost,i,&prov,saveResult);
 		if (prov != arr_length){
 			printf("\nCycle does not exist");
+			fprintf(saveResult,"\nCycle does not exist");
 			weight[i]=999;
 			continue;
 		}
 		printf("\nMinimum cost from %d is %d ",i,cost);
+		fprintf(saveResult,"\nMinimum cost from %d is %d ",i,cost);
 		weight[i]=cost;
 	}
 	min = weight[0];
